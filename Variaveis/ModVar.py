@@ -6,7 +6,7 @@ qtd_funcionarios = int(input("Digite a quantidade de funcionários: "))
 #Cria variável como float
 mediaMensalidade = float(input("Digite a média da mensalidade: "))
 
-#Imprime valor das variáveis nome e empresa concatenados com texto
+#Imprime valor das variáveis nome e empresa concatenados com texto fixo
 print(nome + " trabalha na empresa " + empresa + ".")
 
 #Imprime valor da variável qtd_funcionarios concatenado com texto
