@@ -37,7 +37,7 @@ for i in inventario:
         print("Serial: ", i[2])
         print("Departamento: ", i[3])
 
-# Declaração de variável que vai receber o dado a ser modificado na lista
+# Declaração de variável que vai receber o dado (por equipamento) a ser modificado na lista
 depreciacao = input("\nDigite o nome do equipamento que deseja alterar: ")
 
 for i in inventario:
@@ -46,3 +46,33 @@ for i in inventario:
         i[1] = i[1] * 0.9
         print("Valor atualizado: ", i[1])
 
+# Declaração de variável que vai receber o dado (por numero de serie) a ser removido da lista
+# É importante converter para int porque na lista equipamentos o serial foi criado como int
+serial = int(input("\nDigite o número de série do equipamento que deseja excluir: "))
+
+for i in inventario:
+    if serial == i[2]:
+        inventario.remove(i)
+
+# Imprime novamente cada item da lista inventario, atualizada, contendo cada dado da lista equipamento, composta de 4 posições
+for i in inventario:
+    print("\nEquipamento: ", i[0])
+    print("Valor: ", i[1])
+    print("Serial: ", i[2])
+    print("Departamento: ", i[3])
+
+# Faz um resumo dos valores dos equipamentos do inventário utilizando funções max, min e sum
+
+# Declaração de variável tipo lista que armazena o valor de cada equipamento
+valores = []
+
+# Percorre todos os itens da lista inventario
+for i in inventario:
+    # Para cada posição de "valor" (index 2) da lista inventario, armazena o dado na nova lista valores
+    valores.append(i[1])
+
+# Se a lista valores estiver populada, executa as funções maior valor, menor valor e sumarização dos valores
+if len(valores) > 0:
+    print("\nValor do equipamento mais caro: ", max(valores))
+    print("Valor do equipamento mais barato: ", min(valores))
+    print("Valor total dos equipamentos: ", sum(valores))
